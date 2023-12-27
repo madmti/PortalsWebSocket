@@ -126,7 +126,7 @@ export const getTextChatHandler = (sIo: Websocket) => {
 				],
 				0
 			);
-			socket.to(res._id.toString()).emit('msg', res);
+			socket.to(res.from.toString()).emit('msg', res);
 			socket.emit('msg', res);
 		});
 
