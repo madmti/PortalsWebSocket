@@ -3,7 +3,8 @@
   "module": "src/server.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun --hot run src/server.ts"
+    "dev": "bun --hot run src/server.ts",
+    "serve": "bun run src/server.ts"
   },
   "devDependencies": {
     "bun-types": "latest"
