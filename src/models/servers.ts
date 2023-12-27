@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { type Server, type Channel, type Message } from "@/lib/Types";
+import { type Server, type Channel, type Message } from "../lib/Types";
 
 export const MessageSchema = new Schema<Message>({
     content: { type: String, required:true },

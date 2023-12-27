@@ -6,3 +6,13 @@ export const log = (msg: string | Array<string>, indent: number) => {
 	}
 	console.log(spacing + msg.join(' '));
 };
+
+export const EasyTryCatch = async (callback: Function) => {
+	let res = null;
+	try {
+		res = await callback();
+	} catch (error) {
+		console.log(error);
+	}
+	return res;
+};

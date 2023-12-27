@@ -16,9 +16,9 @@ export const connectDB = async () => {
 		log(['DB:'.bgYellow, 'Trying to connect without credentials'.yellow], 0);
 		try {
 			await connect(URI);
-			log(['DB:'.bgGreen, 'CONNECTED'.green], 0);
+			log(['DB:'.bgGreen, 'CONNECTED'.green, '\n'], 0);
 		} catch {
-			console.log('DB: ERROR CONNECTING TO DATABASE'.bgRed);
+			log(['DB:'.bgRed, 'ERROR CONNECTING TO DATABASE'.red, '\n'], 0);
 		}
 	}
 };
