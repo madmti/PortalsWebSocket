@@ -49,6 +49,7 @@ export type UserData = {
 	servers: Server[] | null;
 	created: Number;
 	friends: String[] | UserData[] | null;
+	requests: String[] | Request[] | null;
 };
 
 export type RequestType =

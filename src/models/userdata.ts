@@ -8,6 +8,7 @@ const UserDataSchema = new Schema<UserData>({
 	servers: [{ type: Schema.Types.ObjectId, ref: 'Servers' }],
 	created: { type: Number, required: true, default: 0 },
 	friends: [{ type: Schema.Types.ObjectId, ref: 'UserData' }],
+	requests: [{ type: Schema.Types.ObjectId, ref: 'Request' }],
 });
 
 const RequestSchema = new Schema<Request>({
