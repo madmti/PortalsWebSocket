@@ -50,3 +50,18 @@ export type UserData = {
 	created: Number;
 	friends: String[] | UserData[] | null;
 };
+
+export type RequestType =
+	| 'friend'
+	| 'bridge'
+	| 'serverjoin'
+	| 'eventjoin'
+	| 'musicgroupjoin';
+
+export type Request = {
+	_id: ObjectId;
+	type: RequestType;
+	from: ObjectId;
+	to: ObjectId;
+	data?: Object;
+};

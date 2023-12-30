@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { type UserData } from '../lib/Types';
+import { type UserData, type Request } from '../lib/Types';
 
 const UserDataSchema = new Schema<UserData>({
 	alias: { type: String, required: false },
@@ -10,4 +10,12 @@ const UserDataSchema = new Schema<UserData>({
 	friends: [{ type: Schema.Types.ObjectId, ref: 'UserData' }],
 });
 
+const RequestSchema = new Schema<Request>({
+	type: { type: String, required: true },
+	from: { type: Schema.Types.ObjectId, required: true },
+	to: { type: Schema.Types.ObjectId, required: true },
+	data: { type: Object, required: false },
+});
+
+export const RequestModel = model<Request>('Request', RequestSchema);
 export const UserDataModel = model<UserData>('UserData', UserDataSchema);
