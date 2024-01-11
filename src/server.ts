@@ -4,6 +4,7 @@ import Websocket from './lib/WebSocket';
 import { getTextChatHandler } from './routes/textchat.route';
 import { enable } from 'colors';
 import { connectDB } from './database';
+import { getWebRtcHandler } from './routes/webrtc.route';
 enable();
 
 const app = express();
@@ -24,3 +25,6 @@ sIo.on('connect', (socket) => {
 
 const textchathandler = getTextChatHandler(sIo);
 sIo.of('/textchat').on('connect', textchathandler);
+
+const webrtchandler = getWebRtcHandler(sIo);
+sIo.of('/webrtc').on('connect', webrtchandler);
